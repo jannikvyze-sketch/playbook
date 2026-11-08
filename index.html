@@ -79,16 +79,17 @@ a.btn{display:inline-block;text-decoration:none}.acts{display:flex;gap:8px;align
 <button data-v="games" class="">Spiele</button>
 <button data-v="players" class="">Spieler</button>
 <div class="sp"></div>
-<button id="pub" class="pb" data-act="pub" title="Aktuellen Stand als Datei speichern, dann auf GitHub hochladen" hidden="">Exportieren</button>
+<button id="pub" class="pb" data-act="pub" title="Aktuellen Stand auf GitHub speichern, damit das Team ihn sieht" hidden="">Veröffentlichen</button>
 <div class="tag" id="st">Ansicht</div>
-<button id="lg" class="lg" data-act="lg" hidden="">Zur Ansicht wechseln</button>
+<button id="lg" class="lg" data-act="lg" hidden="">Team-Login</button>
 </nav>
 <main id="m"></main>
 <div id="md" hidden=""><div class="card"><h3 id="mt"></h3><p id="mx" class="mu"></p><div style="display:flex;gap:8px;margin-top:14px"><button class="btn" data-act="rl">Neu laden</button><button class="btn g" data-act="x">Schließen</button></div></div></div>
+<div id="tk" hidden="" style="position:fixed;inset:0;background:rgba(0,0,0,.5);display:grid;place-items:center;z-index:25;padding:20px"><div class="card" style="max-width:460px;width:100%"><h3>Einmalig mit GitHub verbinden</h3><p class="mu" style="margin:8px 0 0;line-height:1.6">Damit die Seite sich selbst speichern kann, braucht sie einen Zugangsschlüssel (Token) nur für dieses Repository. Er bleibt in diesem Browser und wird sonst nirgends gespeichert.<br><br>1. GitHub öffnen: Profilbild, Settings, Developer settings, Personal access tokens, Fine-grained tokens, Generate new token.<br>2. Repository access: Only select repositories, dein Playbook-Repo wählen.<br>3. Permissions, Repository permissions, Contents: Read and write.<br>4. Token erzeugen, kopieren und hier einfügen.</p><label for="tkv">Token</label><input id="tkv" type="password" autocomplete="off" placeholder="github_pat_…"><div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap"><button class="btn" data-act="tks">Speichern und veröffentlichen</button><button class="btn g" data-act="tkf">Stattdessen als Datei laden</button><button class="btn g" data-act="tkx">Abbrechen</button></div></div></div>
 <div id="pk" hidden=""><div class="pbx"><div class="phd"><input id="pq" placeholder="Champion suchen…" autocomplete="off"><button id="pkc" class="btn g" data-act="pkc">Leeren</button><button class="btn" data-act="pkx">Fertig</button></div><div id="pg"></div></div></div>
 <input type="file" id="fi" accept="image/*" hidden="">
 <datalist id="cl"></datalist>
-<script type="application/json" id="seed">{"players":[{"id":"p0","name":"","role":"Top","notes":"","pool":[],"color":"#e11d48"},{"id":"p1","name":"Jannik","role":"Jungle","notes":"","pool":[],"color":"#0f766e"},{"id":"p2","name":"","role":"Mid","notes":"","pool":[],"color":"#2563eb"},{"id":"p3","name":"","role":"ADC","notes":"","pool":[],"color":"#e11d48"},{"id":"p4","name":"","role":"Support","notes":"","pool":[],"color":"#ca8a04"}],"drafts":[{"id":"dmw7vtt4f04u","title":"niklas","side":"Blue Side","enemy":"","picks":["","","","",""],"bans":["","","","",""],"pros":"","cons":"","notes":""},{"id":"dmw7tzlbe2al","title":"Immer banned aber egal","side":"Red Side","enemy":"","picks":["Shen","Nocturne","Vladimir","Ezreal","Poppy"],"bans":["","","","",""],"pros":"","cons":"","notes":""}],"champs":{},"games":[],"icons":{},"v":1794145373127}</script>
+<script type="application/json" id="seed">{"players":[{"id":"p0","name":"","role":"Top","notes":"","pool":[],"color":"#e11d48"},{"id":"p1","name":"Jannik","role":"Jungle","notes":"","pool":[],"color":"#0f766e"},{"id":"p2","name":"","role":"Mid","notes":"","pool":[],"color":"#2563eb"},{"id":"p3","name":"","role":"ADC","notes":"","pool":[],"color":"#e11d48"},{"id":"p4","name":"","role":"Support","notes":"","pool":[],"color":"#ca8a04"}],"drafts":[{"id":"dmw7tzlbe2al","title":"Immer banned aber egal","side":"Red Side","enemy":"","picks":["Shen","Nocturne","Vladimir","Ezreal","Poppy"],"bans":["","","","",""],"pros":"","cons":"","notes":""}],"champs":{},"games":[],"icons":{},"v":1}</script>
 <script>
 var CH="Aatrox,Ahri,Akali,Akshan,Alistar,Ambessa,Amumu,Anivia,Annie,Aphelios,Ashe,Aurelion Sol,Aurora,Azir,Bard,Bel'Veth,Blitzcrank,Brand,Braum,Briar,Caitlyn,Camille,Cassiopeia,Cho'Gath,Corki,Darius,Diana,Dr. Mundo,Draven,Ekko,Elise,Evelynn,Ezreal,Fiddlesticks,Fiora,Fizz,Galio,Gangplank,Garen,Gnar,Gragas,Graves,Gwen,Hecarim,Heimerdinger,Hwei,Illaoi,Irelia,Ivern,Janna,Jarvan IV,Jax,Jayce,Jhin,Jinx,K'Sante,Kai'Sa,Kalista,Karma,Karthus,Kassadin,Katarina,Kayle,Kayn,Kennen,Kha'Zix,Kindred,Kled,Kog'Maw,LeBlanc,Lee Sin,Leona,Lillia,Lissandra,Lucian,Lulu,Lux,Malphite,Malzahar,Maokai,Master Yi,Mel,Milio,Miss Fortune,Mordekaiser,Morgana,Naafiri,Nami,Nasus,Nautilus,Neeko,Nidalee,Nilah,Nocturne,Nunu & Willump,Olaf,Orianna,Ornn,Pantheon,Poppy,Pyke,Qiyana,Quinn,Rakan,Rammus,Rek'Sai,Rell,Renata Glasc,Renekton,Rengar,Riven,Rumble,Ryze,Samira,Sejuani,Senna,Seraphine,Sett,Shaco,Shen,Shyvana,Singed,Sion,Sivir,Skarner,Smolder,Sona,Soraka,Swain,Sylas,Syndra,Tahm Kench,Taliyah,Talon,Taric,Teemo,Thresh,Tristana,Trundle,Tryndamere,Twisted Fate,Twitch,Udyr,Urgot,Varus,Vayne,Veigar,Vel'Koz,Vex,Vi,Viego,Viktor,Vladimir,Volibear,Warwick,Wukong,Xayah,Xerath,Xin Zhao,Yasuo,Yone,Yorick,Yunara,Yuumi,Zaahen,Zac,Zed,Zeri,Ziggs,Zilean,Zoe,Zyra".split(",");
 var ROLES=["Top","Jungle","Mid","ADC","Support"],RS=["TOP","JGL","MID","ADC","SUP"];
@@ -110,7 +111,7 @@ reg("Mage","Ahri,Anivia,Annie,Aurelion Sol,Aurora,Azir,Brand,Cassiopeia,Fiddlest
 function tile(c,k){k=k||"";if(!c)return'<span class="nm ph '+k+'">+</span>';var cl=CLS[c]||(CH.indexOf(c)>-1?"Fighter":null),p=cl?CC[cl]:["hsl("+hu(c)+",50%,42%)","hsl("+hu(c)+",50%,30%)"];return'<span class="nm '+k+'" title="'+(cl||"")+'" style="background:linear-gradient(135deg,'+p[0]+','+p[1]+')">'+e(c)+'</span>'}
 function chip(c,rm,pid){return'<span class="cw">'+tile(c)+(rm?'<b data-rm="'+e(c)+'" data-pid="'+pid+'" title="Entfernen">×</b>':'')+'</span>'}
 function uid(){return"d"+Date.now().toString(36)+Math.random().toString(36).slice(2,5)}
-function save(){if(!admin)return;dirty=true;$("#pub").textContent="Exportieren ●";try{localStorage.setItem("pb_local",JSON.stringify({base:BASE,s:S}))}catch(_){}}
+function save(){if(!admin)return;dirty=true;$("#pub").textContent="Veröffentlichen ●";try{localStorage.setItem("pb_local",JSON.stringify({base:BASE,s:S}))}catch(_){}}
 function dis(){return admin?"":"disabled"}
 function dr(id){return S.drafts.find(function(d){return d.id===id})}
 function render(){window._da=0;
@@ -251,7 +252,7 @@ document.addEventListener("click",function(ev){
   var sw=t.closest("[data-sw]");if(sw){player(sw.dataset.pid).color=sw.dataset.sw;save();render();return}
  }
  var a=t.dataset.act;if(!a)return;
- if(a==="pub"){pub();return}if(a==="lg"){login();return}if(a==="x"){$("#md").hidden=true;return}if(a==="rl"){location.reload();return}
+ if(a==="pub"){pub();return}if(a==="tkx"){$("#tk").hidden=true;return}if(a==="tkf"){$("#tk").hidden=true;exportFile();return}if(a==="tks"){var tv=$("#tkv").value.trim();if(tv.length<20){msg("Token fehlt","Füge den kompletten Token ein, er beginnt mit github_pat_.");return}try{localStorage.setItem("pb_token",tv)}catch(_){}$("#tk").hidden=true;$("#tkv").value="";doPub();return}if(a==="lg"){login();return}if(a==="x"){$("#md").hidden=true;return}if(a==="rl"){location.reload();return}
  if(a==="pkx"){closePk();return}if(a==="pkc"){choose("");return}
  if(a==="gback"){gopen=null}
  else if(a==="newg"){var ng={id:uid(),title:"Neues Spiel",date:"",result:"",url:"",notes:"",an:null};S.games.unshift(ng);gopen=ng.id;save()}
@@ -294,7 +295,7 @@ function msg(t,x){$("#mt").textContent=t;$("#mx").textContent=x;$("#md").hidden=
 function ui(){
  admin=canAdmin;
  var st=$("#st");st.textContent=admin?"● Bearbeiten-Modus":"Ansicht";st.className="tag"+(admin?" adm":"");
- $("#pub").hidden=!admin;$("#pub").textContent=dirty?"Exportieren ●":"Exportieren";
+ $("#pub").hidden=!admin;$("#pub").textContent=dirty?"Veröffentlichen ●":"Veröffentlichen";
  var l=$("#lg");l.textContent=canAdmin?(admin?"Zur Ansicht wechseln":"Zum Bearbeiten wechseln"):"Team-Login";l.className="lg"+(canAdmin?"":" gh");
  render();
 }
@@ -303,19 +304,43 @@ function login(){
  if(canAdmin){setPref("admin");ui();return}
  msg("Team-Login","Bearbeiten dürfen nur freigeschaltete Personen: Du brauchst die Bearbeiter-Rolle auf diesem Playbook (Freigabe durch den Besitzer) und ein angemeldetes claude.ai-Konto. Melde dich dort an und öffne diesen Link erneut. Dann wirst du automatisch als Admin erkannt und bleibst es auf diesem Gerät, bis du dich abmeldest.");
 }
-function pub(){
+function exportHtml(){
+ var o=JSON.parse(JSON.stringify(S));o.v=Date.now();
+ var c=document.documentElement.cloneNode(true);
+ c.querySelector("#m").innerHTML="";c.querySelector("#cl").innerHTML="";c.querySelector("#md").hidden=true;c.querySelector("#tk").hidden=true;c.querySelector("#pk").hidden=true;c.querySelector("#pg").innerHTML="";
+ c.querySelector("#seed").textContent=JSON.stringify(o).replace(/</g,"\\u003c");
+ c.querySelector("#st").textContent="Ansicht";c.querySelector("#st").className="tag";
+ c.querySelector("#pub").hidden=true;c.querySelector("#pub").textContent="Veröffentlichen";
+ return{html:"<!DOCTYPE html>\n"+c.outerHTML,v:o.v};
+}
+function keepLocal(){try{localStorage.setItem("pb_local",JSON.stringify({base:BASE,s:S}))}catch(_){}}
+function exportFile(){
  try{
-  var o=JSON.parse(JSON.stringify(S));o.v=Date.now();
-  var c=document.documentElement.cloneNode(true);
-  c.querySelector("#m").innerHTML="";c.querySelector("#cl").innerHTML="";c.querySelector("#md").hidden=true;c.querySelector("#pk").hidden=true;c.querySelector("#pg").innerHTML="";
-  c.querySelector("#seed").textContent=JSON.stringify(o).replace(/</g,"\\u003c");
-  c.querySelector("#st").textContent="Ansicht";c.querySelector("#st").className="tag";
-  c.querySelector("#pub").hidden=true;c.querySelector("#pub").textContent="Exportieren";
-  var blob=new Blob(["<!DOCTYPE html>\n"+c.outerHTML],{type:"text/html"});
+  var x=exportHtml(),blob=new Blob([x.html],{type:"text/html"});
   var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="index.html";document.body.appendChild(a);a.click();a.remove();
-  dirty=false;$("#pub").textContent="Exportieren";
-  msg("Datei gespeichert","Lade die Datei index.html jetzt in dein GitHub-Repository hoch und ersetze die alte. Nach ca. einer Minute sieht das Team den neuen Stand.");
+  BASE=x.v;S.v=x.v;keepLocal();dirty=false;$("#pub").textContent="Veröffentlichen";
+  msg("Datei gespeichert","Lade die Datei index.html in dein GitHub-Repository hoch und ersetze die alte.");
  }catch(err){msg("Export fehlgeschlagen",(err&&err.message)||"Bitte erneut versuchen.")}
+}
+function ghRepo(){var h=location.hostname;if(!/\.github\.io$/.test(h))return null;var seg=location.pathname.split("/").filter(Boolean)[0];var o=h.split(".")[0];return{owner:o,repo:seg||(o+".github.io")}}
+function b64(s){return btoa(unescape(encodeURIComponent(s)))}
+function tok(){try{return localStorage.getItem("pb_token")||""}catch(_){return""}}
+function pub(){if(!tok()){$("#tkv").value="";$("#tk").hidden=false;return}doPub()}
+async function doPub(){
+ var b=$("#pub");b.textContent="Veröffentliche…";
+ try{
+  var r=ghRepo();if(!r)throw{message:"Veröffentlichen geht nur auf der GitHub-Pages-Adresse (…github.io). Hier kannst du die Datei stattdessen exportieren."};
+  var x=exportHtml(),api="https://api.github.com/repos/"+r.owner+"/"+r.repo+"/contents/index.html";
+  var hd={"Authorization":"Bearer "+tok(),"Accept":"application/vnd.github+json"};
+  var g=await fetch(api,{headers:hd,cache:"no-store"});
+  if(g.status===401){try{localStorage.removeItem("pb_token")}catch(_){}throw{message:"Der Token ist ungültig oder abgelaufen. Klicke noch einmal auf Veröffentlichen und füge einen neuen ein."}}
+  if(!g.ok)throw{message:"GitHub hat den Zugriff abgelehnt (Status "+g.status+"). Prüfe, ob der Token für dieses Repository die Berechtigung Contents: Read and write hat."};
+  var sha=(await g.json()).sha;
+  var p=await fetch(api,{method:"PUT",headers:hd,body:JSON.stringify({message:"Playbook aktualisiert",content:b64(x.html),sha:sha})});
+  if(!p.ok){var j={};try{j=await p.json()}catch(_){}throw{message:"Speichern bei GitHub fehlgeschlagen (Status "+p.status+")"+(j.message?": "+j.message:"")+"."}}
+  BASE=x.v;S.v=x.v;keepLocal();dirty=false;b.textContent="Veröffentlichen";
+  msg("Veröffentlicht","Das Team sieht den neuen Stand in etwa einer Minute, nach einem Neuladen der Seite.");
+ }catch(err){b.textContent=dirty?"Veröffentlichen ●":"Veröffentlichen";msg("Veröffentlichen fehlgeschlagen",(err&&err.message)||"Bitte erneut versuchen.")}
 }
 try{var sd=$("#seed").textContent;if(sd&&sd.trim()!=="null")load(sd)}catch(_){}
 var BASE=S.v||0;
